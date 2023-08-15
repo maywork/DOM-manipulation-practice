@@ -5,6 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tour of DOM</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    .fruits-container li {
+      color: maroon;
+    }
+
+    #fruits-title {
+      color: red;
+    }
+
+    .important-places {
+      color: blueviolet;
+    }
+  </style>
 </head>
 
 <body>
@@ -13,12 +27,68 @@
   </header>
   <main>
     <h1>Intro to DOM manipulation</h1>
-    <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
+    <section>
+      <h1>Generic Unordered List</h1>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </section>
+    <section class="fruits-container">
+      <h1 id="fruits-title" class="fruits">Fruits I like</h1>
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Carrot</li>
+      </ul>
+    </section>
+    <section>
+      <h1>Places I like to visit</h1>
+      <ul>
+        <li class="important-places">Shundorbon</li>
+        <li class="important-places">Bandorbon</li>
+        <li class="important-places">Shalbon</li>
+        <li>Katabon</li>
+      </ul>
+    </section>
   </main>
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/scriptStyle.js"></script>
+
+  <script>
+    console.log('adding js inside the html file');
+
+    const liCollection = document.getElementsByTagName('li');
+    for (const li of liCollection) {
+      // console.log(li);
+    }
+
+    const allHeadings = document.querySelectorAll('h1');
+    for (const heading of allHeadings) {
+      // console.log(heading.innerText);
+    }
+    // This was also changed by the style tag but this overrides it
+    document.getElementById('fruits-title').style.color = 'limegreen';
+
+    const places = document.getElementsByClassName('important-places');
+    for (const place of places) {
+      // console.log(place.innerText);
+    }
+    // querySelector
+    // querySelectorAll
+    const someLi = document.querySelectorAll('.fruits-container li');
+    for (const li of someLi) {
+      // console.log(li.innerText);
+    }
+
+    const title = document.getElementById('fruits-title');
+    // console.log(title.getAttribute('class'));
+
+    document.getElementsByClassName('fruits-container')
+    // console.log(document.getElementsByClassName('fruits-container')[0].innerText);
+  </script>
 </body>
 
 </html>

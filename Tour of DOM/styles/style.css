@@ -1,3 +1,11 @@
 h1 {
-  color: lightcoral
+  color: navy;
+}
+
+.txt-color {
+  color: magenta;
+} 
+
+.large-txt {
+  font-size: 1.2rem;
 }
